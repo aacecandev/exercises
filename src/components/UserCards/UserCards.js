@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
+import { IndividualCard } from "./IndividualCard/IndividualCard";
 
 export const UserCards = props => {
-    console.log(props.users)
     return (
         <div>
-            {props.users.items ? props.users.items.map(e => <p>{e.login}</p>) : ""}
+            {props.users.items ? props.users.items.map(e => <IndividualCard key={e.login} userInfo={e} />) : ""}
         </div>
     )
 }
