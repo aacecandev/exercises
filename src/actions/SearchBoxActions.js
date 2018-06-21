@@ -2,6 +2,8 @@ import axios from "axios";
 
 export const WRITING = "WRITING THE SEARCH TERMS";
 export const WAITING = "WAITING";
+export const SEARCHING = "SEARCHING FOR USERS";
+export const SEARCHDONE = "SEARCH DONE"
 
 export const writing = text => {
   return {
@@ -13,13 +15,12 @@ export const writing = text => {
 export const waiting = () => {
   return {
     type: WAITING,
-    payload: ""
   };
 };
 
-export const search = word => {
-  axios
-    .get(`https://api.github.com/users/${word}`)
-    .then(response => console.log(response.data))
-    .catch(e => console.log(e));
-};
+export const searchDone = data => {
+    return {
+        type: SEARCHDONE,
+        payload: data
+    }
+}

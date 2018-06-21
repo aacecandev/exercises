@@ -3,6 +3,7 @@ import classes from './Layout.css';
 import SearchBox from '../containers/SearchBox/SearchBox';
 import { Loading } from './Loading/Loading';
 import { connect } from "react-redux";
+import  UserCards  from './UserCards/UserCards';
 
 export const Layout = (props) => {
   return (
@@ -13,6 +14,7 @@ export const Layout = (props) => {
       <div>Content
           <SearchBox />
           {props.isLoading ? <Loading /> : null}
+          <UserCards />
       </div>
       <div className={classes.Footer}>
           <p>Hecho en casa</p>
